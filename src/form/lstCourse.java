@@ -30,24 +30,21 @@ public class lstCourse extends javax.swing.JPanel {
     private void initComponents() {
 
         jlFacultyName = new javax.swing.JLabel();
-        jcFaculty = new javax.swing.JComboBox();
         jbtAddNew = new javax.swing.JButton();
         jbtUpdate = new javax.swing.JButton();
         jbtDelete = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jlFacultyName1 = new javax.swing.JLabel();
-        jcFaculty1 = new javax.swing.JComboBox();
+        jSeparator2 = new javax.swing.JSeparator();
+        jTextField2 = new javax.swing.JTextField();
+        jbtAddNew1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(31, 58, 146));
 
         jlFacultyName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jlFacultyName.setForeground(new java.awt.Color(255, 255, 255));
         jlFacultyName.setText("Course");
-
-        jcFaculty.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jcFaculty.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jbtAddNew.setBackground(new java.awt.Color(0, 102, 153));
         jbtAddNew.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -93,12 +90,14 @@ public class lstCourse extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Course");
 
-        jlFacultyName1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jlFacultyName1.setForeground(new java.awt.Color(255, 255, 255));
-        jlFacultyName1.setText("GroupCourse");
+        jTextField2.setBackground(new java.awt.Color(31, 58, 146));
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.setBorder(null);
 
-        jcFaculty1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jcFaculty1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jbtAddNew1.setBackground(new java.awt.Color(0, 153, 255));
+        jbtAddNew1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jbtAddNew1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/Search.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -114,13 +113,16 @@ public class lstCourse extends javax.swing.JPanel {
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jlFacultyName)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(jcFaculty, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jlFacultyName1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jcFaculty1, 0, 233, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jbtAddNew1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 303, Short.MAX_VALUE)
                         .addComponent(jbtAddNew)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbtUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -135,17 +137,21 @@ public class lstCourse extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jbtAddNew)
-                        .addComponent(jbtUpdate)
-                        .addComponent(jbtDelete))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jlFacultyName)
-                        .addComponent(jcFaculty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jlFacultyName1)
-                        .addComponent(jcFaculty1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jbtAddNew)
+                                .addComponent(jbtUpdate)
+                                .addComponent(jbtDelete))
+                            .addComponent(jlFacultyName)
+                            .addComponent(jbtAddNew1))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -159,13 +165,13 @@ public class lstCourse extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton jbtAddNew;
+    private javax.swing.JButton jbtAddNew1;
     private javax.swing.JButton jbtDelete;
     private javax.swing.JButton jbtUpdate;
-    private javax.swing.JComboBox jcFaculty;
-    private javax.swing.JComboBox jcFaculty1;
     private javax.swing.JLabel jlFacultyName;
-    private javax.swing.JLabel jlFacultyName1;
     // End of variables declaration//GEN-END:variables
 }

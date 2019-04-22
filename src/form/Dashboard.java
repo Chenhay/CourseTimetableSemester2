@@ -8,6 +8,7 @@ package form;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -22,7 +23,8 @@ public final class Dashboard extends javax.swing.JFrame {
     /**
      * Creates new form Dashboard
      */
-    private JPanel home,faculty,department,classroom,course,instructor,student,timetable,report,profile;
+    private JPanel home,faculty,department,classroom,course,instructor,student,timetable,profile;
+    private JFrame about,account,logout;
     
     public Dashboard() {
         initComponents();
@@ -66,9 +68,6 @@ public final class Dashboard extends javax.swing.JFrame {
         jpTimetable = new javax.swing.JPanel();
         jlTimetableIcon = new javax.swing.JLabel();
         jlTimetable = new javax.swing.JLabel();
-        jpReport = new javax.swing.JPanel();
-        jlReportIcon = new javax.swing.JLabel();
-        jlReport = new javax.swing.JLabel();
         jpProfile = new javax.swing.JPanel();
         jlProfileIcon = new javax.swing.JLabel();
         jlProfile = new javax.swing.JLabel();
@@ -410,44 +409,6 @@ public final class Dashboard extends javax.swing.JFrame {
                 .addComponent(jlTimetable, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jpReport.setBackground(new java.awt.Color(31, 58, 146));
-        jpReport.setName("Report"); // NOI18N
-        jpReport.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OnMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                OnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                OnMouseExited(evt);
-            }
-        });
-
-        jlReportIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu/Report.png"))); // NOI18N
-
-        jlReport.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jlReport.setForeground(new java.awt.Color(255, 255, 255));
-        jlReport.setText("Report");
-
-        javax.swing.GroupLayout jpReportLayout = new javax.swing.GroupLayout(jpReport);
-        jpReport.setLayout(jpReportLayout);
-        jpReportLayout.setHorizontalGroup(
-            jpReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpReportLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jlReportIcon)
-                .addGap(18, 18, 18)
-                .addComponent(jlReport)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpReportLayout.setVerticalGroup(
-            jpReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jlReportIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jlReport, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
         jpProfile.setBackground(new java.awt.Color(31, 58, 146));
         jpProfile.setName("Profile"); // NOI18N
         jpProfile.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -612,7 +573,6 @@ public final class Dashboard extends javax.swing.JFrame {
             .addComponent(jSeparatorBar)
             .addComponent(jpStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jpTimetable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jpProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jpAbout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jpLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -621,7 +581,6 @@ public final class Dashboard extends javax.swing.JFrame {
         jpMenuLayout.setVerticalGroup(
             jpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
                 .addComponent(jSeparatorBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -640,21 +599,19 @@ public final class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpTimetable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpAbout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpLogout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpIteamLayout = new javax.swing.GroupLayout(jpIteam);
         jpIteam.setLayout(jpIteamLayout);
         jpIteamLayout.setHorizontalGroup(
             jpIteamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1081, Short.MAX_VALUE)
+            .addGap(0, 1051, Short.MAX_VALUE)
         );
         jpIteamLayout.setVerticalGroup(
             jpIteamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -665,20 +622,27 @@ public final class Dashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jpIteam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jpBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(3, 3, 3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jpBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jpIteam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(3, 3, 3))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(3, 3, 3)
                 .addComponent(jpBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpIteam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(3, 3, 3))
+                    .addComponent(jpIteam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -693,6 +657,9 @@ public final class Dashboard extends javax.swing.JFrame {
         instructor = new lstInstructor();
         student = new lstStudent();
         timetable = new lstTimetable();
+        account = new Account();
+        about = new About();
+        logout = new Signin();
         jpIteam.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -713,10 +680,107 @@ public final class Dashboard extends javax.swing.JFrame {
         instructor.setVisible(false);
         student.setVisible(false);
         timetable.setVisible(false);
+        account.setVisible(false);
+        about.setVisible(false);
+        logout.setVisible(false);
+    }
+    
+    public void checkVisible(java.awt.event.MouseEvent evt){
+        switch(evt.getComponent().getName()){
+            case "Home" : {
+                if(home.isVisible()){
+                    evt.getComponent().setBackground(new Color(34,167,240));
+                }
+                else {
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                }
+            }break;
+            case "Faculty" : {
+                if(faculty.isVisible()){
+                    evt.getComponent().setBackground(new Color(34,167,240));
+                }
+                else {
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                }
+            }break;
+            case "Depatment" : {
+                if(department.isVisible()){
+                    evt.getComponent().setBackground(new Color(34,167,240));
+                }
+                else {
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                }
+            }break;
+            case "Classroom" : {
+                if(classroom.isVisible()){
+                    evt.getComponent().setBackground(new Color(34,167,240));
+                }
+                else {
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                }
+            }break;
+            case "Course" : {
+                if(course.isVisible()){
+                    evt.getComponent().setBackground(new Color(34,167,240));
+                }
+                else {
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                }
+            }break;
+            case "Instructor" : {
+                if(instructor.isVisible()){
+                    evt.getComponent().setBackground(new Color(34,167,240));
+                }
+                else {
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                }
+            }break;
+            case "Student" : {
+                if(student.isVisible()){
+                    evt.getComponent().setBackground(new Color(34,167,240));
+                }
+                else {
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                }
+            }break;
+            case "Timetable" : {
+                if(timetable.isVisible()){
+                    evt.getComponent().setBackground(new Color(34,167,240));
+                }
+                else {
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                }
+            }break;
+            case "Profile" : {
+                if(account.isVisible()){
+                    evt.getComponent().setBackground(new Color(34,167,240));
+                }
+                else {
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                }
+            }break;
+            case "About" : {
+                if(about.isVisible()){
+                    evt.getComponent().setBackground(new Color(34,167,240));
+                }
+                else {
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                }
+            }break;
+            case "Logout" : {
+                if(logout.isVisible()){
+                    evt.getComponent().setBackground(new Color(34,167,240));
+                }
+                else {
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                }
+            }break;
+        }
     }
     
     private void OnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseEntered
-        String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Report","Profile","Setting","About","Logout"};
+        String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Report","Profile","About","Logout"};
+        
         for (String NameComponent1 : NameComponent) {
             if (NameComponent1.equals(evt.getComponent().getName())) {
                 evt.getComponent().setBackground(new Color(34,167,240));
@@ -725,12 +789,15 @@ public final class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_OnMouseEntered
 
     private void OnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseExited
-        String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Report","Profile","Setting","About","Logout"};
+       String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Report","Profile","Setting","About","Logout"};
         for (String NameComponent1 : NameComponent) {
             if (NameComponent1.equals(evt.getComponent().getName())) {
-                evt.getComponent().setBackground(new Color(31,58,146));
+                    evt.getComponent().setBackground(new Color(31,58,146));
+                    //checkVisible(evt);
             }
         }
+        
+        
     }//GEN-LAST:event_OnMouseExited
 
     private void OnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseClicked
@@ -743,6 +810,9 @@ public final class Dashboard extends javax.swing.JFrame {
         instructor.setVisible(false);
         student.setVisible(false);
         timetable.setVisible(false);
+        account.setVisible(false);
+        about.setVisible(false);
+        logout.setVisible(false);
         switch(evt.getComponent().getName()){
             case "Home":{
                 home.setVisible(true);
@@ -857,8 +927,6 @@ public final class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jlMinimize;
     private javax.swing.JLabel jlProfile;
     private javax.swing.JLabel jlProfileIcon;
-    private javax.swing.JLabel jlReport;
-    private javax.swing.JLabel jlReportIcon;
     private javax.swing.JLabel jlStudent;
     private javax.swing.JLabel jlStudentIcon;
     private javax.swing.JLabel jlTimetable;
@@ -875,7 +943,6 @@ public final class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jpLogout;
     private javax.swing.JPanel jpMenu;
     private javax.swing.JPanel jpProfile;
-    private javax.swing.JPanel jpReport;
     private javax.swing.JPanel jpStudent;
     private javax.swing.JPanel jpTimetable;
     // End of variables declaration//GEN-END:variables
@@ -890,5 +957,4 @@ public final class Dashboard extends javax.swing.JFrame {
     public static void setEnable(boolean b){
         dashboard.setEnable(b);
     }
-    
 }
