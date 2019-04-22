@@ -684,120 +684,23 @@ public final class Dashboard extends javax.swing.JFrame {
         about.setVisible(false);
         logout.setVisible(false);
     }
-    
-    public void checkVisible(java.awt.event.MouseEvent evt){
-        switch(evt.getComponent().getName()){
-            case "Home" : {
-                if(home.isVisible()){
-                    evt.getComponent().setBackground(new Color(34,167,240));
-                }
-                else {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                }
-            }break;
-            case "Faculty" : {
-                if(faculty.isVisible()){
-                    evt.getComponent().setBackground(new Color(34,167,240));
-                }
-                else {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                }
-            }break;
-            case "Depatment" : {
-                if(department.isVisible()){
-                    evt.getComponent().setBackground(new Color(34,167,240));
-                }
-                else {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                }
-            }break;
-            case "Classroom" : {
-                if(classroom.isVisible()){
-                    evt.getComponent().setBackground(new Color(34,167,240));
-                }
-                else {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                }
-            }break;
-            case "Course" : {
-                if(course.isVisible()){
-                    evt.getComponent().setBackground(new Color(34,167,240));
-                }
-                else {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                }
-            }break;
-            case "Instructor" : {
-                if(instructor.isVisible()){
-                    evt.getComponent().setBackground(new Color(34,167,240));
-                }
-                else {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                }
-            }break;
-            case "Student" : {
-                if(student.isVisible()){
-                    evt.getComponent().setBackground(new Color(34,167,240));
-                }
-                else {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                }
-            }break;
-            case "Timetable" : {
-                if(timetable.isVisible()){
-                    evt.getComponent().setBackground(new Color(34,167,240));
-                }
-                else {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                }
-            }break;
-            case "Profile" : {
-                if(account.isVisible()){
-                    evt.getComponent().setBackground(new Color(34,167,240));
-                }
-                else {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                }
-            }break;
-            case "About" : {
-                if(about.isVisible()){
-                    evt.getComponent().setBackground(new Color(34,167,240));
-                }
-                else {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                }
-            }break;
-            case "Logout" : {
-                if(logout.isVisible()){
-                    evt.getComponent().setBackground(new Color(34,167,240));
-                }
-                else {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                }
-            }break;
-        }
-    }
-    
     private void OnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseEntered
-        String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Report","Profile","About","Logout"};
-        
-        for (String NameComponent1 : NameComponent) {
+        String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Profile","About","Logout"};
+        for (String NameComponent1 : NameComponent){
             if (NameComponent1.equals(evt.getComponent().getName())) {
                 evt.getComponent().setBackground(new Color(34,167,240));
             }
         }
+        
     }//GEN-LAST:event_OnMouseEntered
 
     private void OnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseExited
-       String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Report","Profile","Setting","About","Logout"};
+       String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Profile","About","Logout"};
         for (String NameComponent1 : NameComponent) {
             if (NameComponent1.equals(evt.getComponent().getName())) {
-                    evt.getComponent().setBackground(new Color(31,58,146));
-                    //checkVisible(evt);
+                evt.getComponent().setBackground(new Color(31,58,146));
             }
         }
-        
-        
     }//GEN-LAST:event_OnMouseExited
 
     private void OnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseClicked
