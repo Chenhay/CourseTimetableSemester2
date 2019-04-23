@@ -312,7 +312,7 @@ public class Signin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void OnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseEntered
-       String[] NameComponent = {"Login","Signup","Back","Summit","Reset"};
+       String[] NameComponent = {"Login","Signup",};
         for (String NameComponent1 : NameComponent) {
             if (NameComponent1.equals(evt.getComponent().getName())) {
                 evt.getComponent().setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -372,7 +372,7 @@ public class Signin extends javax.swing.JFrame {
         String username = jtUsername.getText();
         String password = jtPassword.getText();
         try {
-            rs = stm.executeQuery("SELECT user_name FROM tbUser WHERE user_name = '" + username + "' and user_password = '" + password + "'");
+            rs = stm.executeQuery("SELECT username FROM tbUser WHERE username = '" + username + "' and user_password = '" + password + "'");
             int count = 0;
             while(rs.next()){
                 count++;

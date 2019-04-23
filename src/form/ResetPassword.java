@@ -386,7 +386,7 @@ public class ResetPassword extends javax.swing.JFrame {
                                     }
                                     System.out.println(position.toString());
                                     if (position.contains("Admin")) {
-                                        rs = stm.executeQuery("SELECT * FROM tbUser WHERE user_fullname = '" + jtFullName.getText() + "' AND user_name = '" + jtUsername.getText() + "'");
+                                        rs = stm.executeQuery("SELECT * FROM tbUser WHERE user_fullname = '" + jtFullName.getText() + "' AND username = '" + jtUsername.getText() + "'");
                                         rs.last();
                                         if (rs.getRow() == 1) {
                                             rs.updateString("user_password", jtNew_Password.getText());

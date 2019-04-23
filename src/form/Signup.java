@@ -165,7 +165,7 @@ public class Signup extends javax.swing.JFrame {
         jbtSignin.setBackground(new java.awt.Color(153, 0, 153));
         jbtSignin.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jbtSignin.setForeground(new java.awt.Color(255, 255, 255));
-        jbtSignin.setText("Sign Up");
+        jbtSignin.setText("Sign up");
         jbtSignin.setToolTipText("Summit");
         jbtSignin.setName("Signup"); // NOI18N
         jbtSignin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -469,13 +469,13 @@ public class Signup extends javax.swing.JFrame {
                     stm = Connect_db.getStatement();
                     try {
                         if (con != null && stm != null) {
-                            rs = stm.executeQuery("SELECT user_name FROM tbUser");
+                            rs = stm.executeQuery("SELECT username FROM tbUser");
                             ArrayList<String> arrayUsername = new ArrayList<>();
                             while(rs.next()){
                                 arrayUsername.add(rs.getString(1));
                             }
                             if (!arrayUsername.contains(userName)) {
-                                CallableStatement cs = con.prepareCall("{call dbo.insertUser("+fullName+","+userName+","+password+","+position+","+sex+","+null+","+null+","+null+")}");
+                                CallableStatement cs = con.prepareCall("{call dbo.insertUser("+fullName+","+sex+","+position+","+userName+","+password+")}");
                                 cs.execute();
                                 JOptionPane.showMessageDialog(null, "SignUp successfully!", "Successfully", JOptionPane.INFORMATION_MESSAGE);
                                 new Signin().setVisible(true);
