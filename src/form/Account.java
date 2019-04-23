@@ -6,7 +6,9 @@
 package form;
 
 import Event.Connect_db;
+import static form.About.dashboard;
 import java.awt.Color;
+import static java.awt.Frame.ICONIFIED;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -19,20 +21,14 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
-/**
- *
- * @author Chenhai
- */
 public class Account extends javax.swing.JFrame {
     
-    private static Account signup;
     private static Connection con;
     private static Statement stm;
     private ResultSet rs;
-
-    /**
-     * Creates new form Signup
-     */
+    private static Account account;
+    public static Dashboard dashboard;
+    
     public Account() {
         initComponents();
         setLocationRelativeTo(null);
@@ -69,7 +65,7 @@ public class Account extends javax.swing.JFrame {
         jlRe_Password = new javax.swing.JLabel();
         jtRe_Password = new javax.swing.JPasswordField();
         jSeparator6 = new javax.swing.JSeparator();
-        jlExit = new javax.swing.JLabel();
+        jlClose = new javax.swing.JLabel();
         jlMinimize = new javax.swing.JLabel();
         jcNew = new javax.swing.JCheckBox();
         jcDisable = new javax.swing.JCheckBox();
@@ -178,13 +174,13 @@ public class Account extends javax.swing.JFrame {
 
         jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
 
-        jlExit.setBackground(new java.awt.Color(31, 58, 146));
-        jlExit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/barform/icons8_multiply_20px.png"))); // NOI18N
-        jlExit.setToolTipText("Close");
-        jlExit.setName("Exit"); // NOI18N
-        jlExit.setOpaque(true);
-        jlExit.addMouseListener(new java.awt.event.MouseAdapter() {
+        jlClose.setBackground(new java.awt.Color(31, 58, 146));
+        jlClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/barform/icons8_multiply_20px.png"))); // NOI18N
+        jlClose.setToolTipText("Close");
+        jlClose.setName("Close"); // NOI18N
+        jlClose.setOpaque(true);
+        jlClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OnMouseLabelClicked(evt);
             }
@@ -234,21 +230,12 @@ public class Account extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jlMinimize, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(jlExit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jlClose, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jbtSignin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(118, 118, 118))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtRe_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlFullName)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jtFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(10, 10, 10))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -288,7 +275,18 @@ public class Account extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addComponent(jrbMale)
                             .addGap(18, 18, 18)
-                            .addComponent(jrbFemale))))
+                            .addComponent(jrbFemale)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtRe_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlFullName)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jtFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(10, 10, 10)))))
                 .addContainerGap(55, Short.MAX_VALUE))
             .addComponent(jlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -296,7 +294,7 @@ public class Account extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlExit)
+                    .addComponent(jlClose)
                     .addComponent(jlMinimize))
                 .addGap(11, 11, 11)
                 .addComponent(jlHeader)
@@ -374,16 +372,17 @@ public class Account extends javax.swing.JFrame {
     }//GEN-LAST:event_OnMouseEntered
 
     private void OnMouseLabelClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseLabelClicked
-        if(evt.getComponent().getName().equalsIgnoreCase("Exit")){
+        if(evt.getComponent().getName().equalsIgnoreCase("Close")){
+            dashboard.setEnabled(true);
             this.dispose();
         }
         if(evt.getComponent().getName().equalsIgnoreCase("Minimize")){
-            this.setState(JFrame.ICONIFIED);
+            this.setState(ICONIFIED);
         }
     }//GEN-LAST:event_OnMouseLabelClicked
 
     private void OnMouseLabelEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseLabelEntered
-        if(evt.getComponent().getName().equalsIgnoreCase("Exit")){
+        if(evt.getComponent().getName().equalsIgnoreCase("Close")){
             evt.getComponent().setBackground(Color.red);
         }
         if(evt.getComponent().getName().equalsIgnoreCase("Minimize")){
@@ -392,7 +391,7 @@ public class Account extends javax.swing.JFrame {
     }//GEN-LAST:event_OnMouseLabelEntered
 
     private void OnMouseLabelExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseLabelExited
-        if(evt.getComponent().getName().equalsIgnoreCase("Exit")){
+        if(evt.getComponent().getName().equalsIgnoreCase("Close")){
             evt.getComponent().setBackground(new Color(31,58,146));
         }
         if(evt.getComponent().getName().equalsIgnoreCase("Minimize")){
@@ -498,7 +497,7 @@ public class Account extends javax.swing.JFrame {
     private javax.swing.JButton jbtSignin;
     private javax.swing.JCheckBox jcDisable;
     private javax.swing.JCheckBox jcNew;
-    private javax.swing.JLabel jlExit;
+    private javax.swing.JLabel jlClose;
     private javax.swing.JLabel jlFullName;
     private javax.swing.JLabel jlHeader;
     private javax.swing.JLabel jlMinimize;
@@ -528,9 +527,9 @@ public class Account extends javax.swing.JFrame {
     }
     
     public static Account getInstance(){
-        if (signup == null) {
-            signup = new Account();
+        if (account == null) {
+            account = new Account();
         }
-        return signup;
+        return account;
     }
 }

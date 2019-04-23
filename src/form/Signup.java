@@ -155,7 +155,7 @@ public class Signup extends javax.swing.JFrame {
         jbtSignup.setName("Back"); // NOI18N
         jbtSignup.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbtSignupMouseClicked(evt);
+                OnMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 OnMouseEntered(evt);
@@ -165,15 +165,12 @@ public class Signup extends javax.swing.JFrame {
         jbtSignin.setBackground(new java.awt.Color(153, 0, 153));
         jbtSignin.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jbtSignin.setForeground(new java.awt.Color(255, 255, 255));
-        jbtSignin.setText("Summit");
+        jbtSignin.setText("Sign Up");
         jbtSignin.setToolTipText("Summit");
-        jbtSignin.setName("Summit"); // NOI18N
+        jbtSignin.setName("Signup"); // NOI18N
         jbtSignin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbtSigninMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                OnMouseEntered(evt);
+                OnMouseClicked(evt);
             }
         });
 
@@ -422,15 +419,6 @@ public class Signup extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void OnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseEntered
-       String[] NameComponent = {"Login","Signup","Back","Summit","Reset"};
-        for (String NameComponent1 : NameComponent) {
-            if (NameComponent1.equals(evt.getComponent().getName())) {
-                evt.getComponent().setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-            }
-        }
-    }//GEN-LAST:event_OnMouseEntered
-
     private void OnMouseLabelClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseLabelClicked
         if(evt.getComponent().getName().equalsIgnoreCase("Exit")){
             if(JOptionPane.showConfirmDialog(null, "Do you want to Exit ?", "Exit", JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE)==0){
@@ -460,42 +448,47 @@ public class Signup extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_OnMouseLabelExited
 
-    private void jbtSigninMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtSigninMouseClicked
-        String fullName = jtFullName.getText();
-        String userName = jtUsername.getText();
-        String sex = getSex();
-        String position = jtPoistion.getText();
-        String password = jtPassword.getText();
-        String re_password = jtRe_Password.getText();
-        if (!fullName.isEmpty() && !userName.isEmpty() && !position.isEmpty()){
-            if (!password.equals(re_password)) {
-                JOptionPane.showMessageDialog(null, "Your password not match!", "Password not match", JOptionPane.INFORMATION_MESSAGE);
-            }
-            else{
-                con = Connect_db.getConnection();
-                stm = Connect_db.getStatement();
-                try {
-                    if (con != null && stm != null) {
-                        rs = stm.executeQuery("SELECT Username FROM tbUser");
-                        ArrayList<String> arrayUsername = new ArrayList<>();
-                        while(rs.next()){
-                            arrayUsername.add(rs.getString(1));
-                        }
-                        if (!arrayUsername.contains(userName)) {
-                            CallableStatement cs = con.prepareCall("{call dbo.insertUser("+fullName+","+userName+","+password+","+position+","+sex+","+null+","+null+","+null+")}");
-                            cs.execute();
-                            JOptionPane.showMessageDialog(null, "SignUp successfully!", "Successfully", JOptionPane.INFORMATION_MESSAGE);
-                            new Signin().setVisible(true);
-                            this.dispose();
+    private void OnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseClicked
+        if(evt.getComponent().getName().equalsIgnoreCase("Back")){
+            Signin.getInstance().setVisible(true);
+            this.dispose();
+        }
+        if(evt.getComponent().getName().equalsIgnoreCase("Signup")){
+            String fullName = jtFullName.getText();
+            String userName = jtUsername.getText();
+            String sex = getSex();
+            String position = jtPoistion.getText();
+            String password = jtPassword.getText();
+            String re_password = jtRe_Password.getText();
+            if (!fullName.isEmpty() && !userName.isEmpty() && !position.isEmpty()){
+                if (!password.equals(re_password)) {
+                    JOptionPane.showMessageDialog(null, "Your password not match!", "Password not match", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    con = Connect_db.getConnection();
+                    stm = Connect_db.getStatement();
+                    try {
+                        if (con != null && stm != null) {
+                            rs = stm.executeQuery("SELECT user_name FROM tbUser");
+                            ArrayList<String> arrayUsername = new ArrayList<>();
+                            while(rs.next()){
+                                arrayUsername.add(rs.getString(1));
+                            }
+                            if (!arrayUsername.contains(userName)) {
+                                CallableStatement cs = con.prepareCall("{call dbo.insertUser("+fullName+","+userName+","+password+","+position+","+sex+","+null+","+null+","+null+")}");
+                                cs.execute();
+                                JOptionPane.showMessageDialog(null, "SignUp successfully!", "Successfully", JOptionPane.INFORMATION_MESSAGE);
+                                new Signin().setVisible(true);
+                                this.dispose();
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(null, "This username has already!", "Signin", JOptionPane.INFORMATION_MESSAGE);
+                            }
                         }
                         else{
-                            JOptionPane.showMessageDialog(null, "This username has already!", "Signin", JOptionPane.INFORMATION_MESSAGE);
+                            System.out.println("Connection null!");
                         }
-                    }
-                    else{
-                        System.out.println("Connection null!");
-                    }
-                } catch (SQLException ex) {
+                    } catch (SQLException ex) {
                     Logger.getLogger(Signup.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -503,12 +496,17 @@ public class Signup extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(null, "Fullname, Username, Position\nCan't be null", "Enter information!", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_jbtSigninMouseClicked
+        }
+    }//GEN-LAST:event_OnMouseClicked
 
-    private void jbtSignupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtSignupMouseClicked
-        Signin.getInstance().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jbtSignupMouseClicked
+    private void OnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseEntered
+        String[] NameComponent = {"Signup","Back"};
+        for (String NameComponent1 : NameComponent) {
+            if (NameComponent1.equals(evt.getComponent().getName())) {
+                evt.getComponent().setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            }
+        }
+    }//GEN-LAST:event_OnMouseEntered
 
     /**
      * @param args the command line arguments

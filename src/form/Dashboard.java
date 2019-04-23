@@ -80,6 +80,9 @@ public final class Dashboard extends javax.swing.JFrame {
         jpHome = new javax.swing.JPanel();
         jlHomeIcon = new javax.swing.JLabel();
         jlHome = new javax.swing.JLabel();
+        jpReport = new javax.swing.JPanel();
+        jlReportIcon1 = new javax.swing.JLabel();
+        jlReport = new javax.swing.JLabel();
         jpIteam = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -561,6 +564,44 @@ public final class Dashboard extends javax.swing.JFrame {
                 .addComponent(jlHome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        jpReport.setBackground(new java.awt.Color(31, 58, 146));
+        jpReport.setName("Report"); // NOI18N
+        jpReport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                OnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                OnMouseExited(evt);
+            }
+        });
+
+        jlReportIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu/Report.png"))); // NOI18N
+
+        jlReport.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jlReport.setForeground(new java.awt.Color(255, 255, 255));
+        jlReport.setText("Report");
+
+        javax.swing.GroupLayout jpReportLayout = new javax.swing.GroupLayout(jpReport);
+        jpReport.setLayout(jpReportLayout);
+        jpReportLayout.setHorizontalGroup(
+            jpReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpReportLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlReportIcon1)
+                .addGap(18, 18, 18)
+                .addComponent(jlReport)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpReportLayout.setVerticalGroup(
+            jpReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jlReportIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlReport, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout jpMenuLayout = new javax.swing.GroupLayout(jpMenu);
         jpMenu.setLayout(jpMenuLayout);
         jpMenuLayout.setHorizontalGroup(
@@ -577,6 +618,7 @@ public final class Dashboard extends javax.swing.JFrame {
             .addComponent(jpAbout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jpLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jpHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jpMenuLayout.setVerticalGroup(
             jpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -599,12 +641,14 @@ public final class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpTimetable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(jpProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpAbout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpLogout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout jpIteamLayout = new javax.swing.GroupLayout(jpIteam);
@@ -615,7 +659,7 @@ public final class Dashboard extends javax.swing.JFrame {
         );
         jpIteamLayout.setVerticalGroup(
             jpIteamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 535, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -685,7 +729,7 @@ public final class Dashboard extends javax.swing.JFrame {
         logout.setVisible(false);
     }
     private void OnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseEntered
-        String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Profile","About","Logout"};
+        String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Report","Profile","About","Logout"};
         for (String NameComponent1 : NameComponent){
             if (NameComponent1.equals(evt.getComponent().getName())) {
                 evt.getComponent().setBackground(new Color(34,167,240));
@@ -695,7 +739,7 @@ public final class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_OnMouseEntered
 
     private void OnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseExited
-       String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Profile","About","Logout"};
+       String[] NameComponent = {"Home","Faculty","Department","Classroom","Course","Instructor","Student","Timetable","Report","Profile","About","Logout"};
         for (String NameComponent1 : NameComponent) {
             if (NameComponent1.equals(evt.getComponent().getName())) {
                 evt.getComponent().setBackground(new Color(31,58,146));
@@ -754,6 +798,7 @@ public final class Dashboard extends javax.swing.JFrame {
             }break;
             case "Profile":{
                 new Account().setVisible(true);
+                Account.dashboard = this;
                 this.setEnabled(false);
             }break;
             case "About":{
@@ -830,6 +875,8 @@ public final class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jlMinimize;
     private javax.swing.JLabel jlProfile;
     private javax.swing.JLabel jlProfileIcon;
+    private javax.swing.JLabel jlReport;
+    private javax.swing.JLabel jlReportIcon1;
     private javax.swing.JLabel jlStudent;
     private javax.swing.JLabel jlStudentIcon;
     private javax.swing.JLabel jlTimetable;
@@ -846,6 +893,7 @@ public final class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jpLogout;
     private javax.swing.JPanel jpMenu;
     private javax.swing.JPanel jpProfile;
+    private javax.swing.JPanel jpReport;
     private javax.swing.JPanel jpStudent;
     private javax.swing.JPanel jpTimetable;
     // End of variables declaration//GEN-END:variables

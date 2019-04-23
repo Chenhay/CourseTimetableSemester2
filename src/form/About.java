@@ -6,6 +6,7 @@
 package form;
 
 import java.awt.Color;
+import static java.awt.Frame.ICONIFIED;
 
 /**
  *
@@ -64,13 +65,13 @@ public class About extends javax.swing.JFrame {
         jlMinimize.setOpaque(true);
         jlMinimize.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jlMinimizeOnMouseLabelClicked(evt);
+                OnMouseLabelClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jlMinimizeOnMouseLabelEntered(evt);
+                OnMouseLabelEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jlMinimizeOnMouseLabelExited(evt);
+                OnMouseLabelExited(evt);
             }
         });
 
@@ -81,13 +82,13 @@ public class About extends javax.swing.JFrame {
         jlClose.setOpaque(true);
         jlClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jlCloseOnMouseLabelClicked(evt);
+                OnMouseLabelClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jlCloseOnMouseLabelEntered(evt);
+                OnMouseLabelEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jlCloseOnMouseLabelExited(evt);
+                OnMouseLabelExited(evt);
             }
         });
 
@@ -185,7 +186,7 @@ public class About extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(189, 189, 189)
                         .addComponent(jLabel12)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jSeparator1)
         );
         jPanel2Layout.setVerticalGroup(
@@ -214,7 +215,7 @@ public class About extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9)
                 .addGap(56, 56, 56))
         );
@@ -223,81 +224,53 @@ public class About extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(3, 3, 3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(3, 3, 3))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(3, 3, 3)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(3, 3, 3))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jlMinimizeOnMouseLabelClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlMinimizeOnMouseLabelClicked
+    private void OnMouseLabelClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseLabelClicked
         if(evt.getComponent().getName().equalsIgnoreCase("Close")){
-            //Create Messagebox =>> Yes No Ok
-
-            //Call Loginform or Staying form Dashboard
-            new Signin().setVisible(true);
-        }
-        if(evt.getComponent().getName().equalsIgnoreCase("Minimize")){
-            this.setState(ICONIFIED);
-        }
-    }//GEN-LAST:event_jlMinimizeOnMouseLabelClicked
-
-    private void jlMinimizeOnMouseLabelEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlMinimizeOnMouseLabelEntered
-        if(evt.getComponent().getName().equalsIgnoreCase("Close")){
-            evt.getComponent().setBackground(Color.red);
-        }
-        if(evt.getComponent().getName().equalsIgnoreCase("Minimize")){
-            evt.getComponent().setBackground(new Color(153,153,153));
-        }
-    }//GEN-LAST:event_jlMinimizeOnMouseLabelEntered
-
-    private void jlMinimizeOnMouseLabelExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlMinimizeOnMouseLabelExited
-        if(evt.getComponent().getName().equalsIgnoreCase("Close")){
-            evt.getComponent().setBackground(new Color(31,58,146));
-        }
-        if(evt.getComponent().getName().equalsIgnoreCase("Minimize")){
-            evt.getComponent().setBackground(new Color(31,58,146));
-        }
-    }//GEN-LAST:event_jlMinimizeOnMouseLabelExited
-
-    private void jlCloseOnMouseLabelClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlCloseOnMouseLabelClicked
-        if(evt.getComponent().getName().equalsIgnoreCase("Close")){
-            //Create Messagebox =>> Yes No Ok
-
-            //Call Loginform or Staying form Dashboard
             dashboard.setEnabled(true);
             this.dispose();
         }
         if(evt.getComponent().getName().equalsIgnoreCase("Minimize")){
             this.setState(ICONIFIED);
         }
-    }//GEN-LAST:event_jlCloseOnMouseLabelClicked
+    }//GEN-LAST:event_OnMouseLabelClicked
 
-    private void jlCloseOnMouseLabelEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlCloseOnMouseLabelEntered
+    private void OnMouseLabelEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseLabelEntered
         if(evt.getComponent().getName().equalsIgnoreCase("Close")){
             evt.getComponent().setBackground(Color.red);
         }
         if(evt.getComponent().getName().equalsIgnoreCase("Minimize")){
-            evt.getComponent().setBackground(new Color(153,153,153));
+            evt.getComponent().setBackground(new Color(37, 116, 168));
         }
-    }//GEN-LAST:event_jlCloseOnMouseLabelEntered
+    }//GEN-LAST:event_OnMouseLabelEntered
 
-    private void jlCloseOnMouseLabelExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlCloseOnMouseLabelExited
+    private void OnMouseLabelExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseLabelExited
         if(evt.getComponent().getName().equalsIgnoreCase("Close")){
             evt.getComponent().setBackground(new Color(31,58,146));
         }
         if(evt.getComponent().getName().equalsIgnoreCase("Minimize")){
             evt.getComponent().setBackground(new Color(31,58,146));
         }
-    }//GEN-LAST:event_jlCloseOnMouseLabelExited
+    }//GEN-LAST:event_OnMouseLabelExited
 
     /**
      * @param args the command line arguments

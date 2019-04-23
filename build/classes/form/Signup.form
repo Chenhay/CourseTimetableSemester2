@@ -357,7 +357,7 @@
             <Property name="name" type="java.lang.String" value="Back" noResource="true"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jbtSignupMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="OnMouseClicked"/>
             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="OnMouseEntered"/>
           </Events>
         </Component>
@@ -372,13 +372,12 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Summit"/>
+            <Property name="text" type="java.lang.String" value="Sign Up"/>
             <Property name="toolTipText" type="java.lang.String" value="Summit"/>
-            <Property name="name" type="java.lang.String" value="Summit" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="Signup" noResource="true"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jbtSigninMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="OnMouseEntered"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="OnMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jlSex">
