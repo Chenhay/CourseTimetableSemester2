@@ -19,8 +19,8 @@ public class Connect_db {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             System.out.println("Have driver!");
             String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=CourseTimetable";
-            String user = "sa";
-            String password = "TRY20hai";
+            String user = "seakleang";
+            String password = "NhAkSLsl^^98";
             con = DriverManager.getConnection(dbURL, user, password);
             System.out.println("Connect Success!");
             } catch (ClassNotFoundException ex) {
