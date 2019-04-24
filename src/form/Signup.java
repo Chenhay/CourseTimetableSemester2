@@ -489,13 +489,13 @@ public class Signup extends javax.swing.JFrame {
                             System.out.println("Connection null!");
                         }
                     } catch (SQLException ex) {
-                    Logger.getLogger(Signup.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Signup.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Fullname, Username, Position\nCan't be null", "Enter information!", JOptionPane.INFORMATION_MESSAGE);
-        }
+            else{
+                JOptionPane.showMessageDialog(null, "Fullname, Username, Position\nCan't be null", "Enter information!", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }//GEN-LAST:event_OnMouseClicked
 

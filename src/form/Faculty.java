@@ -51,11 +51,11 @@ public class Faculty extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtFaculty = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jbtNew = new javax.swing.JButton();
+        jbtSave = new javax.swing.JButton();
+        jbtUpdate = new javax.swing.JButton();
+        jbtDelete = new javax.swing.JButton();
+        jbtSearch = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -168,36 +168,66 @@ public class Faculty extends javax.swing.JFrame {
         jtFaculty.setSelectionBackground(new java.awt.Color(51, 0, 102));
         jScrollPane1.setViewportView(jtFaculty);
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 153));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/New.png"))); // NOI18N
-        jButton1.setText("New");
+        jbtNew.setBackground(new java.awt.Color(0, 102, 153));
+        jbtNew.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jbtNew.setForeground(new java.awt.Color(255, 255, 255));
+        jbtNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/New.png"))); // NOI18N
+        jbtNew.setText("New");
+        jbtNew.setName("New"); // NOI18N
+        jbtNew.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OnMouseClicked(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(0, 102, 153));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/Save.png"))); // NOI18N
-        jButton3.setText("Save");
+        jbtSave.setBackground(new java.awt.Color(0, 102, 153));
+        jbtSave.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jbtSave.setForeground(new java.awt.Color(255, 255, 255));
+        jbtSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/Save.png"))); // NOI18N
+        jbtSave.setText("Save");
+        jbtSave.setName("Save"); // NOI18N
+        jbtSave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OnMouseClicked(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(0, 102, 153));
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/Update.png"))); // NOI18N
-        jButton4.setText("Update");
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jbtUpdate.setBackground(new java.awt.Color(0, 102, 153));
+        jbtUpdate.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jbtUpdate.setForeground(new java.awt.Color(255, 255, 255));
+        jbtUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/Update.png"))); // NOI18N
+        jbtUpdate.setText("Update");
+        jbtUpdate.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jbtUpdate.setName("Update"); // NOI18N
+        jbtUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OnMouseClicked(evt);
+            }
+        });
 
-        jButton5.setBackground(new java.awt.Color(0, 102, 153));
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/Delete.png"))); // NOI18N
-        jButton5.setText("Delete");
+        jbtDelete.setBackground(new java.awt.Color(0, 102, 153));
+        jbtDelete.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jbtDelete.setForeground(new java.awt.Color(255, 255, 255));
+        jbtDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/Delete.png"))); // NOI18N
+        jbtDelete.setText("Delete");
+        jbtDelete.setName("Delete"); // NOI18N
+        jbtDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OnMouseClicked(evt);
+            }
+        });
 
-        jButton6.setBackground(new java.awt.Color(0, 102, 153));
-        jButton6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/Search.png"))); // NOI18N
-        jButton6.setText("Search");
+        jbtSearch.setBackground(new java.awt.Color(0, 102, 153));
+        jbtSearch.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jbtSearch.setForeground(new java.awt.Color(255, 255, 255));
+        jbtSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/Search.png"))); // NOI18N
+        jbtSearch.setText("Search");
+        jbtSearch.setName("Search"); // NOI18N
+        jbtSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OnMouseClicked(evt);
+            }
+        });
 
         jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -240,15 +270,15 @@ public class Faculty extends javax.swing.JFrame {
             .addComponent(jSeparator5)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbtNew, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbtSave, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbtUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbtDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(113, 113, 113))
         );
         jPanel2Layout.setVerticalGroup(
@@ -286,11 +316,11 @@ public class Faculty extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(jbtNew)
+                    .addComponent(jbtSave)
+                    .addComponent(jbtUpdate)
+                    .addComponent(jbtDelete)
+                    .addComponent(jbtSearch))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -357,6 +387,25 @@ public class Faculty extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jlCloseOnMouseLabelExited
 
+    private void OnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnMouseClicked
+        if(evt.getComponent().getName().equalsIgnoreCase("New")){
+            
+        }
+        if(evt.getComponent().getName().equalsIgnoreCase("Update")){
+            
+        }
+        if(evt.getComponent().getName().equalsIgnoreCase("Save")){
+            
+        }
+        if(evt.getComponent().getName().equalsIgnoreCase("Delete")){
+            
+        }
+        if(evt.getComponent().getName().equalsIgnoreCase("Search")){
+            
+        }
+        
+    }//GEN-LAST:event_OnMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -393,11 +442,6 @@ public class Faculty extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -415,6 +459,11 @@ public class Faculty extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton jbtDelete;
+    private javax.swing.JButton jbtNew;
+    private javax.swing.JButton jbtSave;
+    private javax.swing.JButton jbtSearch;
+    private javax.swing.JButton jbtUpdate;
     private javax.swing.JLabel jlClose;
     private javax.swing.JLabel jlMinimize;
     private javax.swing.JTable jtFaculty;
